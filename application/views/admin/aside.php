@@ -21,7 +21,22 @@
 						<span> Dashboard <span class="badge badge-pill badge-primary float-right"></span></span>
 					</a>
 				</li>
-				
+				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-group"></i> <span> Categories </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+					<ul class="list-unstyled">
+						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->
+						<li><a href="<?php echo base_url(); ?>admin/Categories">Add Category</a></li>			
+						<li><a href="<?php echo base_url(); ?>admin/Categories/list_categories">All Categories</a></li>
+					</ul>
+				</li>
+				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-file-chart"></i> <span> Post </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+					<ul class="list-unstyled">
+						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->
+						<li><a href="<?php echo base_url(); ?>admin/Post">Add Post</a></li>			
+						<li><a href="<?php echo base_url(); ?>admin/Post/list_posts">All Post</a></li>
+					</ul>
+				</li>
 				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span> SEO </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
 					<ul class="list-unstyled">
