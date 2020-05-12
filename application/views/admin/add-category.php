@@ -49,7 +49,7 @@
 						<div class="col-12">
 							<div class="card m-b-30">
 								<div class="card-body">
-									<form method="post" action="" enctype="multipart/form-data">
+									<form method="post" action="<?php echo base_url('admin/Categories/')?>add_category" enctype="multipart/form-data">
 										<div class="form-group row">
 											<label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
 											<div class="col-sm-10">

@@ -79,7 +79,7 @@
                                             <table id="datatable" class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>Page</th>
+                                                    <th>Name</th>
 													<th>Banner Image</th>
                                                     <th>Action</th>
                                                     
@@ -88,17 +88,16 @@
             
             
                                                 <tbody>
-												
-                                                <tr>
-                                                    
-                                                    <td></td>
-                                                    <td></td>
-													<td><a href=""><li class="fa fa-edit p-2 text-info" style="font-size: 30px"></li></a>
-                                                        <a href=""><li class="fa fa-trash p-2 text-danger" style="font-size: 30px"></li></a>
-                                                        
-                                                    </td>
-                                                </tr>
-												
+												<?php foreach ($category as $row){?>
+                                                    <tr>
+                                                        <td><?php echo $row->name;?></td>
+                                                        <td><img src=<?php echo base_url()."uploads/images/category/$row->banner_img"; ?> height="150" width="200"> </td>
+    													<td><a href=""><li class="fa fa-edit p-2 text-info" style="font-size: 30px"></li></a>
+                                                            <a href="deletecategory/<?php echo $row->id."/".$row->banner_img; ?>"><li class="fa fa-trash p-2 text-danger" style="font-size: 30px"></li></a>
+                                                            
+                                                        </td>
+                                                    </tr>
+												<?php }?>
                                                 </tbody>
                                             </table>
             

@@ -93,37 +93,54 @@
                                                 <div class="tab-content">
                                                     <div class="tab-pane active p-3" id="home-1" role="tabpanel">
                                                         <p class="font-14 mb-0">
-                                                        	<form action="Tour/insert_general" method="post" enctype="multipart/form-data">
+                                                        	<form action="<?php echo base_url('admin/Post')?>/add_post" method="post" enctype="multipart/form-data">
                                                         		<div class="form-group">
 																	<label>Title</label>
 																	<div>
-																		<input type="text" class="form-control" placeholder="Enter Title" name="name" required/>
+																		<input type="text" class="form-control" placeholder="Enter Title" name="title" required/>
 																	</div>
 																</div>
 																
-				                                                
+																<div class="form-group">
+																	<label>Category</label>
+																	<select class="form-control" name="category" id="parentname">
+																		<?php 
+																			foreach ($post as $category) {
+																				echo "<option value='$category->id'>$category->name</option>";
+																			}
+																		 ?>
+																	</select>                                                		
+																</div>
 				                                                <div class="form-group ">
 																	<label for="example-search-input" class="">Banner Image</label>
 																	
 																	<div class="input-group mt-2">
 																		<div class="custom-file">
-																			<input type="file" class="custom-file-input" name="bannerimg"  id="src" required>
+																			<input type="file" class="custom-file-input" name="bannerimg1"  id="src" required>
 																			<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
 																		</div>
 																	</div>
 																</div>
 																
+																	<div class="form-group row">
+																		<label for="example-search-input" class="col-sm-2 col-form-label"></label>
+																		<div class="col-md-10 ">
+																			<div class="input-group mt-2">
+																				<img id="target" height="200" width="250" style="display: none">
+																			</div>
+																		</div>
+																	</div>
 																<div class="form-group">
 																	<label>You Will</label>
 																	<div>
-																		<input type="text" class="form-control" placeholder="Enter" name="youwill" required/>
+																		<textarea class="summernote" name="youwill">Hello Summernote</textarea>
 																	</div>
 																</div>
 
-				                                                <div class="form-group">
+				                                                <!-- <div class="form-group">
 				                                                	<button type="submit" class="btn btn-primary">Submit</button>
 				                                                </div>
-			                                            	</form>
+			                                            	</form> -->
                                                         </p>
                                                     </div><!-- General -->
 
@@ -134,7 +151,7 @@
                                                         		<div class="form-group">
 																	<label>What you will get</label>
 																	<div>
-																		<input type="text" class="form-control" placeholder="Enter Title" name="name" required/>
+																		<textarea class="summernote" name="youget" required>Hello Summernote</textarea>
 																	</div>
 																</div>
 				                                                
@@ -143,16 +160,23 @@
 																	
 																	<div class="input-group mt-2">
 																		<div class="custom-file">
-																			<input type="file" class="custom-file-input" name="img"  id="src" required>
+																			<input type="file" class="custom-file-input" name="bannerimg2"  id="src2" required>
 																			<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
 																		</div>
 																	</div>
 																</div>
-
-				                                                <div class="form-group">
+																	<div class="form-group row">
+																		<label for="example-search-input" class="col-sm-2 col-form-label"></label>
+																		<div class="col-md-10 ">
+																			<div class="input-group mt-2">
+																				<img id="target2" height="200" width="250" style="display: none">
+																			</div>
+																		</div>
+																	</div>
+				                                                <!-- <div class="form-group">
 				                                                	<button type="submit" class="btn btn-primary">Submit</button>
 				                                                </div>
-			                                            	</form>
+			                                            	</form> -->
                                                         </p>
                                                     </div><!-- Get -->
 
@@ -164,7 +188,7 @@
                                                         		<div class="form-group">
 																	<label>Who you will Help</label>
 																	<div>
-																		<input type="text" class="form-control" placeholder="Enter Title" name="name" required/>
+																		<textarea class="summernote" name="whohelp" required>Hello Summernote</textarea>
 																	</div>
 																</div>
                                                         		
@@ -173,24 +197,31 @@
 																	
 																	<div class="input-group mt-2">
 																		<div class="custom-file">
-																			<input type="file" class="custom-file-input" name="img"  id="src" required>
+																			<input type="file" class="custom-file-input" name="bannerimg3"  id="src3" required>
 																			<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
 																		</div>
 																	</div>
 																</div>
-
-				                                                <div class="form-group">
+																	<div class="form-group row">
+																		<label for="example-search-input" class="col-sm-2 col-form-label"></label>
+																		<div class="col-md-10 ">
+																			<div class="input-group mt-2">
+																				<img id="target3" height="200" width="250" style="display: none">
+																			</div>
+																		</div>
+																	</div>
+				                                                <!-- <div class="form-group">
 				                                                	<button type="submit" class="btn btn-primary">Submit</button>
 				                                                </div>
 
-			                                            	</form>
+			                                            	</form> -->
                                                         </p>
                                                     </div><!-- Help -->
                                                     
 
                                                     <div class="tab-pane p-3" id="details" role="tabpanel">
                                                         <p class="font-14 mb-0">
-                                                        	<form action="Tour/insert_details" method="post">
+                                                        	<!-- <form action="Tour/insert_details" method="post"> -->
 
 				                                                <div class="row">
 									                                <div class="col-12">
@@ -198,7 +229,7 @@
 								                                            <h4 class="mt-0 header-title">Details</h4>
 								                                            <!-- <p class="text-muted m-b-30 font-14">Super simple wysiwyg editor on bootstrap</p> -->
 								            
-								                                            <textarea class="summernote" name="details">Hello Summernote</textarea>
+								                                            <textarea class="summernote" name="details" required>Hello Summernote</textarea>
 									                                    </div>
 									                                </div> <!-- end col -->
 									                            </div> <!-- end row -->
@@ -311,6 +342,12 @@
 	var src = document.getElementById("src");
 	var target = document.getElementById("target");
 	showImage(src,target);
+	var src2 = document.getElementById("src2");
+	var target2 = document.getElementById("target2");
+	showImage(src2,target2);
+	var src3 = document.getElementById("src3");
+	var target3 = document.getElementById("target3");
+	showImage(src3,target3);
 
 
 	// $(document).ready(function(){
