@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2020 at 01:43 PM
+-- Generation Time: May 12, 2020 at 08:15 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -40,6 +40,27 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin@1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `tagline` mediumtext NOT NULL,
+  `banner_img` longtext NOT NULL,
+  `isdeleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `tagline`, `banner_img`, `isdeleted`) VALUES
+(1, 'travelling ', 'way to explore the life', 'last.PNG', 0);
 
 -- --------------------------------------------------------
 
@@ -109,6 +130,33 @@ INSERT INTO `navbar` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(255) NOT NULL,
+  `title` mediumtext NOT NULL,
+  `cid` int(11) NOT NULL,
+  `banner_img1` longtext NOT NULL,
+  `youwill` longtext NOT NULL,
+  `youget` longtext NOT NULL,
+  `banner_img2` longtext NOT NULL,
+  `whohelp` longtext NOT NULL,
+  `banner_img3` longtext NOT NULL,
+  `details` longtext NOT NULL,
+  `isdeleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `cid`, `banner_img1`, `youwill`, `youget`, `banner_img2`, `whohelp`, `banner_img3`, `details`, `isdeleted`) VALUES
+(1, 'Travelling', 1, 'last.PNG', 'Hello Summernote', 'Hello Summernote', 'Machine-Learning-Explained3.png', 'Hello Summernote', 'Machine-Learning-Explained1.png', 'Hello Summernote', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seotag`
 --
 
@@ -164,6 +212,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -180,6 +234,13 @@ ALTER TABLE `footer`
 --
 ALTER TABLE `navbar`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cid_fk` (`cid`);
 
 --
 -- Indexes for table `seotag`
@@ -204,10 +265,22 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `seotag`
@@ -220,6 +293,16 @@ ALTER TABLE `seotag`
 --
 ALTER TABLE `sitesetting`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `post`
+--
+ALTER TABLE `post`
+  ADD CONSTRAINT `cid_fk` FOREIGN KEY (`cid`) REFERENCES `category` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
