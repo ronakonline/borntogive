@@ -49,6 +49,163 @@ class Post extends CI_Controller{
         }
     }
 
+    //Update general TAB
+    public function edit_general(){
+        if($_SESSION['admin']){
+            $data = $this->input->post();
+            if ($_FILES['bannerimg1']['error'] != 4){
+                $picture = $this->uploadimage($_FILES['bannerimg1'],"bannerimg1","post");
+
+                if($picture=="error"){
+                    $_SESSION['error']="Error Updating Record";
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+                else{
+                    $this->load->model('PostM');
+                    $op = $this->PostM->edit_general($data,$picture);        
+                    if($op==1){
+                        $_SESSION['success']="Successfully Update";
+                    }
+                    else{
+                        $_SESSION['error']="Error Updating";
+                    }
+
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+            }          
+            else{
+
+                $this->load->model('PostM');
+                $op = $this->PostM->edit_general($data);
+                echo $op;
+                if($op==1){
+                $_SESSION['success']="Successfully Updated";
+                }else{
+                    $_SESSION['error']="Error updating";
+                }
+                redirect('admin/Post/update_post/'.$data['id']);
+            }
+        }
+        else{
+            redirect('admin');   
+        }
+    }
+
+    //Update get TAB
+    public function edit_get(){
+        if($_SESSION['admin']){
+            $data = $this->input->post();
+            if ($_FILES['bannerimg2']['error'] != 4){
+                $picture = $this->uploadimage($_FILES['bannerimg2'],"bannerimg2","post");
+
+                if($picture=="error"){
+                    $_SESSION['error']="Error Updating Record";
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+                else{
+                    $this->load->model('PostM');
+                    $op = $this->PostM->edit_get($data,$picture);        
+                    if($op==1){
+                        $_SESSION['success']="Successfully Update";
+                    }
+                    else{
+                        $_SESSION['error']="Error Updating";
+                    }
+
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+            }          
+            else{
+
+                $this->load->model('PostM');
+                $op = $this->PostM->edit_get($data);
+                echo $op;
+                if($op==1){
+                $_SESSION['success']="Successfully Updated";
+                }else{
+                    $_SESSION['error']="Error updating";
+                }
+                redirect('admin/Post/update_post/'.$data['id']);
+            }
+        }
+        else{
+            redirect('admin');   
+        }
+    }
+
+    //Update help TAB
+    public function edit_help(){
+        if($_SESSION['admin']){
+            $data = $this->input->post();
+            if ($_FILES['bannerimg3']['error'] != 4){
+                $picture = $this->uploadimage($_FILES['bannerimg3'],"bannerimg3","post");
+
+                if($picture=="error"){
+                    $_SESSION['error']="Error Updating Record";
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+                else{
+                    $this->load->model('PostM');
+                    $op = $this->PostM->edit_help($data,$picture);        
+                    if($op==1){
+                        $_SESSION['success']="Successfully Update";
+                    }
+                    else{
+                        $_SESSION['error']="Error Updating";
+                    }
+
+                    redirect('admin/Post/update_post/'.$data['id']);
+                }
+            }          
+            else{
+
+                $this->load->model('PostM');
+                $op = $this->PostM->edit_help($data);
+                
+                if($op==1){
+                $_SESSION['success']="Successfully Updated";
+                }else{
+                    $_SESSION['error']="Error updating";
+                }
+                redirect('admin/Post/update_post/'.$data['id']);
+            }
+        }
+        else{
+            redirect('admin');   
+        }
+    }
+
+    //Update help TAB
+    public function edit_details(){
+        if($_SESSION['admin']){
+            $data = $this->input->post();
+            $this->load->model('PostM');
+            $op = $this->PostM->edit_details($data);
+            
+            if($op==1){
+            $_SESSION['success']="Successfully Updated";
+            }else{
+                $_SESSION['error']="Error updating";
+            }
+            redirect('admin/Post/update_post/'.$data['id']);
+        }
+        else{
+            redirect('admin');   
+        }
+    }
+
+    //List Posts
+    public function  update_post($id){
+        if($_SESSION['admin']){
+            $data['title'] = "Update Post";
+            $this->load->model('PostM');
+            $data['post']= $this->PostM->get_post($id);
+            $this->load->view('admin/edit-post',$data);
+        }else{
+            redirect('admin');
+        }
+    }
+
     //Delete Post(Query)
     public function deletepost($id){
         if($_SESSION['admin']){
