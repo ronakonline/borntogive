@@ -20,4 +20,14 @@ class CategoryM extends CI_Model{
 		$q = $this->db->query('update category set isdeleted = 1 where id ='.$id);
 		return $q;
 	}
+
+	public function get_category($id){
+		$q = $this->db->query('select * from category where isdeleted = 0 AND id ='.$id);
+		return $q->result();
+	}
+
+	public function edit_categories($data,$picture){
+		$q = $this->db->query('update category set name="'.$data['name'].'",tagline="'.$data['tagline'].'",banner_img="'.$picture.'" where id="'.$data['id'].'"');
+		return $q;
+	}
 }

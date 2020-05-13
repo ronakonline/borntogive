@@ -92,7 +92,7 @@
                                                     <tr>
                                                         <td><?php echo $row->name;?></td>
                                                         <td><img src=<?php echo base_url()."uploads/images/category/$row->banner_img"; ?> height="150" width="200"> </td>
-    													<td><a href=""><li class="fa fa-edit p-2 text-info" style="font-size: 30px"></li></a>
+    													<td><a href="update_category/<?php echo $row->id; ?>"><li class="fa fa-edit p-2 text-info" style="font-size: 30px"></li></a>
                                                             <a href="deletecategory/<?php echo $row->id."/".$row->banner_img; ?>"><li class="fa fa-trash p-2 text-danger" style="font-size: 30px"></li></a>
                                                             
                                                         </td>

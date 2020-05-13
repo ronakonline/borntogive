@@ -23,6 +23,8 @@ class Categories extends CI_Controller{
     }
 
 
+
+
     //Add Categorys (Query)
     public function add_category(){
         if($_SESSION['admin']){
@@ -46,6 +48,20 @@ class Categories extends CI_Controller{
         }
     }
 
+
+    //List Categories
+    public function  update_category($id){
+        if($_SESSION['admin']){
+            $data['title'] = "Update Category";
+            $this->load->model('CategoryM');
+            $data['category']= $this->CategoryM->get_category($id);
+            $this->load->view('admin/edit-category',$data);
+        }else{
+            redirect('admin');
+        }
+    }
+
+
     //Delete Parent(Query)
     public function deletecategory($id,$img){
         if($_SESSION['admin']){
@@ -58,6 +74,29 @@ class Categories extends CI_Controller{
                 $_SESSION['error']="Error Deleting";
             }
             redirect('admin/Categories/list_categories');
+        }else{
+            redirect('admin');
+        }
+    }
+
+    //Update Category
+    public function edit_category(){
+        if($_SESSION['admin']){
+            $data = $this->input->post();
+            $picture = $this->uploadimage($_FILES['bannerimg'],"bannerimg","category");
+            if($picture=="error"){
+                $_SESSION['error']="Error Inserting Record";
+            }else{
+                    $this->load->model('CategoryM');
+                    $op = $this->CategoryM->edit_categories($data,$picture);
+                    if($op==1){
+                        $_SESSION['success'] = "Updated Successfully";
+                    }else{
+                        $_SESSION['error'] = "Error Updating";
+                    }
+            }
+            redirect('admin/Categories/update_category/'.$data['id']);
+
         }else{
             redirect('admin');
         }
