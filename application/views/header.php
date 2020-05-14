@@ -19,9 +19,12 @@
                 <!-- <div class="header-info-col"><i class="fa fa-phone"></i> 1800-9090-8089</div> -->
                 <ul class="sf-menu dd-menu pull-right" role="menu">
                     <li><a href="<?php echo base_url();?>">Home</a></li>
-                    <li><a href="<?php echo base_url();?>Page">cars</a></li>
-                    <li><a href="<?php echo base_url();?>Page">Entertainment</a></li>
-                    <li><a href="<?php echo base_url();?>Page">Travel</a></li>
+                    <?php  foreach ($category as $value) { ?>
+                        <li><a href="<?php echo base_url('Page/list_post/').$value->id ?>"><?php echo $value->name;?></a></li>
+                    <?php }?>
+                    <!-- <li><a href="<?php //echo base_url();?>Page">cars</a></li>
+                    <li><a href="<?php //echo base_url();?>Page">Entertainment</a></li>
+                    <li><a href="<?php //echo base_url();?>Page">Travel</a></li> -->
                     <li><a href="<?php echo base_url();?>Winner">winners</a></li>
                     <li><a href="<?php echo base_url();?>Blog">blog</a></li>
                     <li><a href="<?php echo base_url();?>About">About</a></li>
