@@ -4,26 +4,19 @@
     <div class="hero-area" style="background: rgba(0, 0, 0, 0.5);">
         <?php  
             foreach ($category as $value) {
-                if ($value->id == $catid) {
+                if ($value->id == $ccid) {
 
         ?>
             <div class="page-banner parallax" style="background-color: rgba(0,0,0,1);background-image:url(<?php echo base_url('uploads/images/category/').$value->banner_img;?>">
                     
                   <?php }  
              } ?>
-                
+				<?php foreach ($posts as $post){ ?>
+				<?php if($post->id == $postid){ ?>
             <div class="container">
                 <div class="page-banner-text">
                     <h1 class="block-title">
-                    <?php 
-                    if ($post) {
-                        echo $post[0]->name;    
-                    }
-                    else{
-                        echo "No Posts";
-                    }
-                     ?>
-                    <!-- Cause -->
+						<?php echo $post->title; ?>
                     </h1>
                 </div>
             </div>
@@ -37,14 +30,14 @@
                 	<div class="col-md-8 content-block">
                     	<!-- <h3>Summer Camp: Students Get Together</h3> -->
                     	<div class="post-media">
-                        	<img src="<?php echo base_url('uploads/images/post/').$post[0]->banner_img1; ?>" alt="">
+                        	<img src="<?php echo base_url('uploads/images/post/').$post->banner_img1; ?>" alt="">
                         </div>  
                         <div class="row">
                         	<div class="col-md-6 col-sm-6">
                                 <span class="event-date">
-                                    <span class="date"><?php echo date('d', strtotime($post[0]->created)); ?></span>
-                                    <span class="month"><?php echo date('F', strtotime($post[0]->created)); ?></span>
-                                    <span class="year"><?php echo date('Y', strtotime($post[0]->created)); ?></span>
+                                    <span class="date"><?php echo date('d', strtotime($post->created)); ?></span>
+                                    <span class="month"><?php echo date('F', strtotime($post->created)); ?></span>
+                                    <span class="year"><?php echo date('Y', strtotime($post->created)); ?></span>
                                 </span>
                                     <!-- <span class="meta-data">Thursday, 11:20 AM - 02:20 PM</span>
                         		<a href="#" class="btn btn-primary btn-event-single-book">Book Tickets</a> -->
@@ -59,16 +52,16 @@
                         <div class="spacer-20"></div>
                         <h2>what you'll get</h2>
                         <div class="post-media">
-                            <img src="<?php echo base_url('uploads/images/post/').$post[0]->banner_img2; ?>" alt="">
+                            <img src="<?php echo base_url('uploads/images/post/').$post->banner_img2; ?>" alt="">
                         </div>
-                      	<p class="lead"><?php echo $post[0]->youget; ?></p>
+                      	<p class="lead"><?php echo $post->youget; ?></p>
                         
                         <div class="spacer-20"></div>
                         <h2>who you'll help</h2>
                         <div class="post-media">
-                            <img src="<?php echo base_url('uploads/images/post/').$post[0]->banner_img3; ?>" alt="">
+                            <img src="<?php echo base_url('uploads/images/post/').$post->banner_img3; ?>" alt="">
                         </div>
-                        <p class="lead"><?php echo $post[0]->whohelp; ?></p>
+                        <p class="lead"><?php echo $post->whohelp; ?></p>
 
                     </div>
                     
@@ -77,10 +70,10 @@
                     <!-- Sidebar -->
                     <div class="col-md-4 sidebar-block">
                         <div class="widget widget_recent_causes">
-                            <!-- <h3 class="widgettitle"><strong><?php //echo $post[0]->title; ?></strong></h3> -->
+                            <!-- <h3 class="widgettitle"><strong><?php //echo $post->title; ?></strong></h3> -->
 
                             <h4 style="margin-top: 10px;"><strong>You Will:</strong></h4>
-                            <p class="lead"><?php echo $post[0]->youwill; ?></p>
+                            <p class="lead"><?php echo $post->youwill; ?></p>
                             <!-- <ul>
                                 <li>
                                     <a href="#" class="cause-thumb">
@@ -173,8 +166,8 @@
                             <div class="carousel-wrapper padding-tb75">
                                 <div class="row">
                                     <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
-                                        <?php foreach ($slider as $value) { 
-                                            if ($value->id != $post[0]->id) {?>
+                                        <?php foreach ($posts as $value) {
+                                            if ($value->id != $post->id && $value->cid== $ccid)  {?>
                                                 <li class="item">
                                                     <div class="grid-item cause-grid-item small-business format-standard">
                                                         <div class="grid-item-inner">
@@ -200,7 +193,7 @@
                     <div class="container" style="margin-bottom: 20px";>
                         <div class="row">
                             <h2><div class="text-center"><strong>Stuff our lawyers want you to read</strong></div></h2>
-                            <?php echo $post[0]->details; ?>
+                            <?php echo $post->details; ?>
                         </div>
                     </div>
 
@@ -209,5 +202,6 @@
             </div>
         </div>
     </div>
+<?php } } ?>
     <?php $this->load->view('footer'); ?>
     <?php $this->load->view('js-links');?>

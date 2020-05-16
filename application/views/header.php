@@ -21,10 +21,10 @@
                     <li><a href="<?php echo base_url();?>">Home</a></li>
                     <?php
 						foreach ($category as $cat){ ?>
-							<li><a href="<?php echo base_url('Page/list_post/').$cat->id;?>"><?php echo $cat->name; ?></a></li>
+							<li><a href="<?php echo base_url('Page/').$cat->id;?>"><?php echo $cat->name; ?></a></li>
 					<?php } ?>
                     <li><a href="<?php echo base_url();?>Winner">winners</a></li>
-                    <li><a href="<?php echo base_url();?>Blog">blog</a></li>
+                    <li><a href="<?php echo base_url('Blog/list_blog');?>">blog</a></li>
                     <li><a href="<?php echo base_url();?>About">About</a></li>
                     
               	</ul>

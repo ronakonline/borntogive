@@ -36,4 +36,14 @@ class BlogM extends CI_Model{
 			return $q;	
 		}
 	}
+
+	public function list_blog(){
+		$q = $this->db->query('select * from blog where isdeleted = 0');
+		return $q->result();
+	}
+
+	public function show_blog($id){
+		$q = $this->db->query('select * from blog where isdeleted = 0 AND id = '.$id);
+		return $q->result();
+	}
 }
