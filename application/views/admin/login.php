@@ -15,7 +15,7 @@
                     </h3>
 
                     <div class="p-3">
-                        <form class="form-horizontal m-t-20" action="admin/Login/checklogin" method="post">
+                        <form class="form-horizontal m-t-20" action="<?php echo base_url('admin/Login/checklogin'); ?>" method="post">
 
                             <div class="form-group row">
                                 <div class="col-12">
