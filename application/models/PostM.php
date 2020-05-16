@@ -83,4 +83,9 @@ class PostM extends CI_Model{
 		$q = $this->db->query('SELECT category.`name`, post.`id`, post.`title`, post.`cid`, post.`banner_img1`, post.`youwill`, post.`youget`, post.`banner_img2`, post.`whohelp`, post.`banner_img3`, post.`details`, post.`created` FROM `post`,`category` WHERE post.cid = category.id AND post.isdeleted = 0 AND post.id='.$id);
 		return $q->result();
 	}
+
+	public function all_posts(){
+		$q = $this->db->query('select * from post where isdeleted=0');
+		return $q->result();
+	}
 }

@@ -54,3 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/Login';
+
+// Frontend Routes
+
+$route['Page/(:any)'] = 'Page/index/$1';
+$route['Page/(:any)/(:any)'] = 'Page/index/$1/$2';

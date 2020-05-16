@@ -6,8 +6,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{	
-		$this->load->model('CategoryM');
-        $data['category']= $this->CategoryM->list_categories();
+		$data = frontend_data();
 		$this->load->view('home',$data);
 	}
 }
