@@ -31,7 +31,7 @@ class Post extends CI_Controller{
             $picture1 = $this->uploadimage($_FILES['bannerimg1'],"bannerimg1","post");
             $picture2 = $this->uploadimage($_FILES['bannerimg2'],"bannerimg2","post");
             $picture3 = $this->uploadimage($_FILES['bannerimg3'],"bannerimg3","post");
-            if($picture=="error"){
+            if($picture1=="error" || $picture2=="error" || $picture3=="error" ){
                 $_SESSION['error']="Error Inserting Record";
             }else{
                 $this->load->model('PostM');

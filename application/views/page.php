@@ -6,7 +6,17 @@
     	<div class="page-banner parallax" style="background-image:url(<?php echo base_url(); ?>assets/images/inside9.jpg);">
         	<div class="container">
             	<div class="page-banner-text">
-        			<h1 class="block-title">Cause</h1>
+        			<h1 class="block-title">
+                    <?php 
+                    if ($post) {
+                        echo $post[0]->name;    
+                    }
+                    else{
+                        echo "No Posts";
+                    }
+                     ?>
+                    <!-- Cause -->
+                    </h1>
                 </div>
             </div>
         </div>
@@ -20,106 +30,31 @@
                 </div>
                 <div class="row">
                     <ul class="sort-destination isotope gallery-items" data-sort-id="gallery">
-                        <li class="col-md-4 col-sm-6 grid-item event-grid-item education format-standard">
-                        	<div class="grid-item-inner">
-                                <a href="single-event.html" class="media-box">
-                                    <img src="<?php echo base_url(); ?>assets/images/event1.jpg" alt="">
-                                </a>
-                                <div class="grid-item-content">
-                                    <span class="event-date">
-                                        <span class="date">14</span>
-                                        <span class="month">Jan</span>
-                                        <span class="year">2016</span>
-                                    </span>
-                                    <span class="meta-data">Thursday, 11:20 AM - 02:20 PM</span>
-                                    <h3 class="post-title"><a href="single-event.html">Summer Camp: Students Get Together</a></h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">200<span class="badge">Attendees</span></li>
-                                        <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
-                                    </ul>
-                                </div>
-                           	</div>
-                        </li>
-                        <li class="col-md-4 col-sm-6 grid-item event-grid-item human-rights format-standard">
-                        	<div class="grid-item-inner">
-                                <a href="single-event.html" class="media-box">
-                                    <img src="<?php echo base_url(); ?>assets/images/event2.jpg" alt="">
-                                </a>
-                                <div class="grid-item-content">
-                                    <span class="event-date">
-                                        <span class="date">18</span>
-                                        <span class="month">Jan</span>
-                                        <span class="year">2016</span>
-                                    </span>
-                                    <span class="meta-data">Monday, 07:00 PM</span>
-                                    <h3 class="post-title"><a href="single-event.html">Campaign: Fundraising for meals</a></h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">200<span class="badge">Attendees</span></li>
-                                        <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
-                                    </ul>
-                                </div>
-                           	</div>
-                        </li>
-                        <li class="col-md-4 col-sm-6 grid-item event-grid-item environment format-standard">
-                        	<div class="grid-item-inner">
-                                <a href="single-event.html" class="media-box">
-                                    <img src="<?php echo base_url(); ?>assets/images/event3.jpg" alt="">
-                                </a>
-                                <div class="grid-item-content">
-                                <span class="event-date">
-                                    <span class="date">26</span>
-                                    <span class="month">Feb</span>
-                                    <span class="year">2016</span>
-                                </span>
-                                    <span class="meta-data">Friday, 01:00 PM</span>
-                                    <h3 class="post-title"><a href="single-event.html">Campaign: Green Environment</a></h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">200<span class="badge">Attendees</span></li>
-                                        <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
-                                    </ul>
-                                </div>
-                           	</div>
-                        </li>
-                        <li class="col-md-4 col-sm-6 grid-item event-grid-item human-rights format-standard">
-                        	<div class="grid-item-inner">
-                                <a href="single-event.html" class="media-box">
-                                    <img src="<?php echo base_url(); ?>assets/images/event4.jpg" alt="">
-                                </a>
-                                <div class="grid-item-content">
-                                <span class="event-date">
-                                    <span class="date">02</span>
-                                    <span class="month">Mar</span>
-                                    <span class="year">2016</span>
-                                </span>
-                                    <span class="meta-data">Wednesday, 10:00 AM</span>
-                                    <h3 class="post-title"><a href="single-event.html">Campaign: Medical checkup camp</a></h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">200<span class="badge">Attendees</span></li>
-                                        <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
-                                    </ul>
-                                </div>
-                           	</div>
-                        </li>
-                        <li class="col-md-4 col-sm-6 grid-item event-grid-item water format-standard">
-                        	<div class="grid-item-inner">
-                                <a href="single-event.html" class="media-box">
-                                    <img src="<?php echo base_url(); ?>assets/images/event5.jpg" alt="">
-                                </a>
-                                <div class="grid-item-content">
-                                    <span class="event-date">
-                                        <span class="date">02</span>
-                                        <span class="month">Mar</span>
-                                        <span class="year">2016</span>
-                                    </span>
-                                    <span class="meta-data">Wednesday, 01:30 PM</span>
-                                    <h3 class="post-title"><a href="single-event.html">Tips: Rain water harvesting</a></h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">200<span class="badge">Attendees</span></li>
-                                        <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
-                                    </ul>
-                                </div>
-                           	</div>
-                        </li>
+                        <?php foreach ($post as $value) { ?>
+                            <li class="col-md-4 col-sm-6 grid-item event-grid-item education format-standard">
+                            	<div class="grid-item-inner">
+                                    <a href="<?php echo base_url('Page/single_post/').$value->id ?>" class="media-box">
+                                        <img src="<?php echo base_url('uploads/images/post/').$value->banner_img1; ?>" alt="No image">
+                                    </a>
+                                    <div class="grid-item-content" style="padding-bottom: 10px;">
+                                        <span class="event-date">
+                                            <span class="date"><?php echo date('d', strtotime($value->created)); ?></span>
+                                            <span class="month"><?php echo date('F', strtotime($value->created)); ?></span>
+                                            <span class="year"><?php echo date('Y', strtotime($value->created)); ?></span>
+                                        </span>
+                                        <span class="meta-data"><!-- Thursday, 11:20 AM - 02:20 PM --></span>
+                                        <h3 class="post-title"><a href="<?php echo base_url('Page/single_post/').$value->id ?>"><?php echo $value->title; ?></a></h3>
+                                        <p>
+                                            <?php //echo strip_tags($value->youwill); ?>
+                                        </p>
+                                        <!-- <ul class="list-group">
+                                            <li class="list-group-item">200<span class="badge">Attendees</span></li>
+                                            <li class="list-group-item">341 Magetic state, US<span class="badge">Location</span></li>
+                                        </ul> -->
+                                    </div>
+                               	</div>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                

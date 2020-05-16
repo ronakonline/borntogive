@@ -6,6 +6,8 @@ class Blog extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('blog');
+		$this->load->model('CategoryM');
+        $data['category']= $this->CategoryM->list_categories();
+		$this->load->view('blog',$data);
 	}
 }
