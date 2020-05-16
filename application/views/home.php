@@ -60,108 +60,33 @@
         	<div class="lgray-bg padding-tb75">
             	<div class="container">
                 	<div class="row">
-                    	<div class="col-md-5 col-sm-5">
-                        		<h2 class="block-title">Causes that need your<br>urgent attention</h2>
+                    	<div class="col-md-12 col-sm-12">
+                        		<h2 class="block-title">Born to Give raises money for charity by offering incredible experiences</h2>
                         		<div class="spacer-30"></div>
                         </div>
-                        <div class="col-md-7 col-sm-7">
-                        	<div class="spacer-10"></div>
-                        	<p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim. Aenean vitae diam id lacus fringilla maximus. Mauris auctor efficitur nisl, non blandit urna fermentum nec.</p>
-                        </div>
+
                   	</div>
                     <div class="carousel-wrapper">
                         <div class="row">
                             <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
+                               <?php foreach (array_reverse($posts) as $post){ ?>
                                 <li class="item">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="single-cause.html" class="media-box">
-                                                <img src="<?php echo base_url();?>assets/images/causeg1.jpg" alt="">
+                                                <img src="<?php echo base_url('uploads/images/post/').$post->banner_img1;?>" alt="" style="width: 263px; height: 176px;">
                                             </a>
                                             <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="88" data-color="F23827" data-toggle="tooltip" data-original-title="10 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Help small shopkeepers of Sunyani</a></h3>
-                                                <div class="meta-data">Donated $26400 / <span class="cause-target">$30000</span></div>
+
+                                                <h3 class="post-title"><a href="single-cause.html"><?php echo $post->title; ?></a></h3>
+
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
-                                    <div class="grid-item cause-grid-item small-business format-standard">
-                                        <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
-                                                <img src="<?php echo base_url();?>assets/images/causeg2.jpg" alt="">
-                                            </a>
-                                            <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="52" data-color="F6BB42" data-toggle="tooltip" data-original-title="25 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Help relocate the refugees</a></h3>
-                                                <div class="meta-data">Donated $21840 / <span class="cause-target">$40000</span></div>
-                                            </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="grid-item cause-grid-item small-business format-standard">
-                                        <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
-                                                <img src="<?php echo base_url();?>assets/images/causeg5.jpg" alt="">
-                                            </a>
-                                            <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Save tigers from poachers</a></h3>
-                                                <div class="meta-data">Donated $15000 / <span class="cause-target">$20000</span></div>
-                                            </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="grid-item cause-grid-item small-business format-standard">
-                                        <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
-                                                <img src="<?php echo base_url();?>assets/images/causeg6.jpg" alt="">
-                                            </a>
-                                            <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="88" data-color="8CC152" data-toggle="tooltip" data-original-title="70 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Help rebuild Nepal</a></h3>
-                                                <div class="meta-data">Donated $176000 / <span class="cause-target">$200000</span></div>
-                                            </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="grid-item cause-grid-item small-business format-standard">
-                                        <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
-                                                <img src="<?php echo base_url();?>assets/images/gallery1.jpg" alt="">
-                                            </a>
-                                            <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="20" data-color="8CC152" data-toggle="tooltip" data-original-title="102 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Education for everyone</a></h3>
-                                                <div class="meta-data">Donated $4000 / <span class="cause-target">$20000</span></div>
-                                            </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="grid-item cause-grid-item small-business format-standard">
-                                        <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
-                                                <img src="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" alt="">
-                                            </a>
-                                            <div class="grid-item-content">
-                                                <a class="cProgress" data-complete="50" data-color="8CC152" data-toggle="tooltip" data-original-title="105 days left"><strong></strong></a>
-                                                <h3 class="post-title"><a href="single-cause.html">Save water initiative</a></h3>
-                                                <div class="meta-data">Donated $5000 / <span class="cause-target">$10000</span></div>
-                                            </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
-                                        </div>
-                                    </div>
-                                </li>
+								<?php } ?>
+
                             </ul>
                         </div>
                     </div>
