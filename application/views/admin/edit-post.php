@@ -108,8 +108,13 @@
 																	<label>Category</label>
 																	<select class="form-control" name="category" id="parentname">
 																		<?php 
-																			foreach ($post as $category) {
+																			foreach ($category as $category) {
+																				if ($category->name == $post[0]->name) {
+																					echo "<option value='$category->id' selected>$category->name</option>";
+																				}
+																				else{
 																				echo "<option value='$category->id'>$category->name</option>";
+																				}
 																			}
 																		 ?>
 																	</select>                                                		
@@ -119,7 +124,7 @@
 																	
 																	<div class="input-group mt-2">
 																		<div class="custom-file">
-																			<input type="file[]" class="custom-file-input" name="bannerimg1"  id="src">
+																			<input type="file" class="custom-file-input" name="bannerimg1"  id="src">
 																			<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
 																		</div>
 																	</div>

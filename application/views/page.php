@@ -1,9 +1,18 @@
 <?php $this->load->view('css-links'); ?>
 <?php $this->load->view('header'); ?>
-
+    
    <!-- Hero Area -->
-   <div class="hero-area">
-    	<div class="page-banner parallax" style="background-image:url(<?php echo base_url(); ?>assets/images/inside9.jpg);">
+   <div class="hero-area" style="background: rgba(0, 0, 0, 0.5);">
+    	<?php  
+            foreach ($category as $value) {
+                if ($value->id == $catid) {
+
+        ?>
+            <div class="page-banner parallax" style="background-color: rgba(0,0,0,1);background-image:url(<?php echo base_url('uploads/images/category/').$value->banner_img;?>">
+                    
+                  <?php }  
+             } ?>
+                
         	<div class="container">
             	<div class="page-banner-text">
         			<h1 class="block-title">

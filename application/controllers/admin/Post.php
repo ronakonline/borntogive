@@ -198,6 +198,8 @@ class Post extends CI_Controller{
     public function  update_post($id){
         if($_SESSION['admin']){
             $data['title'] = "Update Post";
+            $this->load->model('CategoryM');
+            $data['category']= $this->CategoryM->list_categories();
             $this->load->model('PostM');
             $data['post']= $this->PostM->get_post($id);
             $this->load->view('admin/edit-post',$data);

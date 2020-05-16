@@ -12,6 +12,7 @@ class Page extends CI_Controller {
 	public function list_post($id){
 		$this->load->model('CategoryM');
         $data['category']= $this->CategoryM->list_categories();
+        $data['catid'] = $id;
         $this->load->model('PostM');
         $data['post'] =$this->PostM->show_post_category($id);
 		$this->load->view('page',$data);

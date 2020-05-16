@@ -1,11 +1,30 @@
 <?php $this->load->view('css-links'); ?>
 <?php $this->load->view('header'); ?>
     <!-- Hero Area -->
-    <div class="hero-area" style="min-height: 150px;background-color: black;">
-    	<div class="page-banner parallax" style="min-height: 200px;background-color: black">
-        	<div class="container">
-            	<div class="page-banner-text">
-        			<h1 class="block-title">Post</h1>
+    <div class="hero-area" style="background: rgba(0, 0, 0, 0.5);">
+        <?php  
+            foreach ($category as $value) {
+                if ($value->id == $catid) {
+
+        ?>
+            <div class="page-banner parallax" style="background-color: rgba(0,0,0,1);background-image:url(<?php echo base_url('uploads/images/category/').$value->banner_img;?>">
+                    
+                  <?php }  
+             } ?>
+                
+            <div class="container">
+                <div class="page-banner-text">
+                    <h1 class="block-title">
+                    <?php 
+                    if ($post) {
+                        echo $post[0]->name;    
+                    }
+                    else{
+                        echo "No Posts";
+                    }
+                     ?>
+                    <!-- Cause -->
+                    </h1>
                 </div>
             </div>
         </div>
@@ -58,8 +77,9 @@
                     <!-- Sidebar -->
                     <div class="col-md-4 sidebar-block">
                         <div class="widget widget_recent_causes">
-                            <h3 class="widgettitle"><strong><?php echo $post[0]->title; ?></strong></h3>
-                            <h4><strong>You Will:</strong></h4>
+                            <!-- <h3 class="widgettitle"><strong><?php //echo $post[0]->title; ?></strong></h3> -->
+
+                            <h4 style="margin-top: 10px;"><strong>You Will:</strong></h4>
                             <p class="lead"><?php echo $post[0]->youwill; ?></p>
                             <!-- <ul>
                                 <li>
