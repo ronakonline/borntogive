@@ -43,7 +43,7 @@
                             <li class="col-md-4 col-sm-6 grid-item event-grid-item education format-standard">
                             	<div class="grid-item-inner">
                                     <a href="<?php echo base_url('Page/single_post/').$value->id ?>" class="media-box">
-                                        <img src="<?php echo base_url('uploads/images/post/').$value->banner_img1; ?>" alt="No image">
+                                        <img src="<?php echo base_url('uploads/images/post/').$value->banner_img1; ?>" alt="No image" style="height: 238px;width: 358px;">
                                     </a>
                                     <div class="grid-item-content" style="padding-bottom: 10px;">
                                         <span class="event-date">
