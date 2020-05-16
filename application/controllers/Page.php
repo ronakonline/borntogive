@@ -22,6 +22,9 @@ class Page extends CI_Controller {
         $data['category']= $this->CategoryM->list_categories();
 		$this->load->model('PostM');
         $data['post'] =$this->PostM->show_post($id);
+        $cid = $data['post'][0]->cid;
+        $data['slider'] = $this->PostM->show_post_category($cid);
+
         $this->load->view('post',$data);
 	}
 }

@@ -50,13 +50,15 @@
                             <img src="<?php echo base_url('uploads/images/post/').$post[0]->banner_img3; ?>" alt="">
                         </div>
                         <p class="lead"><?php echo $post[0]->whohelp; ?></p>
-                        
+
                     </div>
+                    
+
                     
                     <!-- Sidebar -->
                     <div class="col-md-4 sidebar-block">
                         <div class="widget widget_recent_causes">
-                            <h3 class="widgettitle"><?php echo $post[0]->title; ?></h3>
+                            <h3 class="widgettitle"><strong><?php echo $post[0]->title; ?></strong></h3>
                             <h4><strong>You Will:</strong></h4>
                             <p class="lead"><?php echo $post[0]->youwill; ?></p>
                             <!-- <ul>
@@ -129,7 +131,60 @@
                                 </li>
                             </ul>
                         </div> -->
+
                     </div>
+
+
+
+                    <!-- <div class="lgray-bg padding-tb75">-->
+                        <div class="container ">
+
+                            <div class="row">
+
+                                <!-- <div class="col-md-5 col-sm-5">
+                                        <h2 class="block-title">Causes that need your<br>urgent attention</h2>
+                                        <div class="spacer-30"></div>
+                                </div> -->
+                                <!-- <div class="col-md-7 col-sm-7">
+                                    <div class="spacer-10"></div>
+                                    <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim. Aenean vitae diam id lacus fringilla maximus. Mauris auctor efficitur nisl, non blandit urna fermentum nec.</p>
+                                </div> -->
+                            </div>
+                            <div class="carousel-wrapper padding-tb75">
+                                <div class="row">
+                                    <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
+                                        <?php foreach ($slider as $value) { 
+                                            if ($value->id != $post[0]->id) {?>
+                                                <li class="item">
+                                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                                        <div class="grid-item-inner">
+                                                            <a href="<?php echo base_url('Page/single_post/').$value->id ?>" class="media-box">
+                                                                <img src="<?php echo base_url('uploads/images/post/').$value->banner_img1; ?>" alt="" style="height: 175px;width: 290px;">
+                                                            </a>
+                                                            <div class="grid-item-content">
+                                                                <!-- <a class="cProgress" data-complete="88" data-color="F23827" data-toggle="tooltip" data-original-title="10 days left"><strong></strong></a> -->
+                                                                <h3 class="post-title"><a href="<?php echo base_url('Page/single_post/').$value->id ?>"><?php echo $value->title; ?></a></h3>
+                                                                <!-- <div class="meta-data">Donated $26400 / <span class="cause-target">$30000</span></div> -->
+                                                            </div>
+                                                            <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a> -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                        <?php }} ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    <div class="container" style="margin-bottom: 20px";>
+                        <div class="row">
+                            <h2><div class="text-center"><strong>Stuff our lawyers want you to read</strong></div></h2>
+                            <?php echo $post[0]->details; ?>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

@@ -26,8 +26,15 @@ class CategoryM extends CI_Model{
 		return $q->result();
 	}
 
-	public function edit_categories($data,$picture){
-		$q = $this->db->query('update category set name="'.$data['name'].'",tagline="'.$data['tagline'].'",banner_img="'.$picture.'" where id="'.$data['id'].'"');
-		return $q;
+	public function edit_categories($data,$img=null){
+		if ($img==null) {
+			$q = $this->db->query('update category set name="'.$data['name'].'",tagline="'.$data['tagline'].'" where id="'.$data['id'].'"');
+			return $q;
+		}
+		else{
+			
+			$q = $this->db->query('update category set name="'.$data['name'].'",tagline="'.$data['tagline'].'",banner_img="'.$img.'" where id="'.$data['id'].'"');
+			return $q;	
+		}
 	}
 }
