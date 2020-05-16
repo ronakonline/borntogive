@@ -16,57 +16,16 @@
     	<div class="content">
         	<div class="container">
                 <ul class="grid-holder isotope gallery-items" data-sort-id="gallery">
+					<?php foreach ($blogs as $blog) {} ?>
                     <li class="col-md-4 col-sm-6 grid-item blog-grid-item format-standard">
                         <div class="grid-item-inner">
                             <a href="single-event.html" class="media-box">
-                                <img src="<?php echo base_url(); ?>assets/images/post1.jpg" alt="">
+                                <img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="">
                             </a>
                             <div class="grid-item-content">
-                                <h3 class="post-title"><a href="single-post.html">A single person can change million lives</a></h3>
-                                <span class="meta-data"><i class="fa fa-calendar"></i> Posted on 11th Dec, 2015</span>
-                                <p>A blog post sample excerpt text which can be edited by editing the blog post page...</p>
-                                <div class="tag-cloud">
-                                    <i class="fa fa-tags"></i> 
-                                    <a href="#">Water</a>
-                                    <a href="#">Students</a>
-                                    <a href="#">NYC</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 grid-item blog-grid-item format-standard">
-                        <div class="grid-item-inner">
-                            <a href="single-event.html" class="media-box">
-                                <img src="<?php echo base_url(); ?>assets/images/post2.jpg" alt="">
-                            </a>
-                            <div class="grid-item-content">
-                                <h3 class="post-title"><a href="single-post.html">Donate your woolens this winter Born To Give</a></h3>
-                                <span class="meta-data"><i class="fa fa-calendar"></i> Posted on 11th Dec, 2015</span>
-                                <p>A blog post sample excerpt text which can be edited by editing the blog post page...</p>
-                                <div class="tag-cloud">
-                                    <i class="fa fa-tags"></i> 
-                                    <a href="#">Water</a>
-                                    <a href="#">Students</a>
-                                    <a href="#">NYC</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 grid-item blog-grid-item format-standard">
-                        <div class="grid-item-inner">
-                            <a href="single-event.html" class="media-box">
-                                <img src="<?php echo base_url(); ?>assets/images/post3.jpg" alt="">
-                            </a>
-                            <div class="grid-item-content">
-                                <h3 class="post-title"><a href="single-post.html">How to survive the tough path of life</a></h3>
-                                <span class="meta-data"><i class="fa fa-calendar"></i> Posted on 11th Dec, 2015</span>
-                                <p>A blog post sample excerpt text which can be edited by editing the blog post page...</p>
-                                <div class="tag-cloud">
-                                    <i class="fa fa-tags"></i> 
-                                    <a href="#">Water</a>
-                                    <a href="#">Students</a>
-                                    <a href="#">NYC</a>
-                                </div>
+                                <h3 class="post-title"><a href="single-post.html"><?php echo $blog->title; ?></a></h3>
+                                <span class="meta-data"><i class="fa fa-calendar"></i> Posted on <?php echo date('d-m-Y',strtotime($blog->created)); ?></span>
+                                <p><?php echo substr(strip_tags($blog->blog),0,70) ?>...</p>
                             </div>
                         </div>
                     </li>
