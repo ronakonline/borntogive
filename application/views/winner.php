@@ -19,35 +19,39 @@
                 </div>
                 <div class="row">
                     <ul class="sort-destination isotope gallery-items gallery-items-nocaption" data-sort-id="gallery">
-                        <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
-                           	<a href="<?php echo base_url(); ?>assets/images/gallery1.jpg" class="media-box magnific-image"> <img src="<?php echo base_url(); ?>assets/images/gallery1.jpg" alt=""> </a>
-                        </li>
-                        <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item sliders format-gallery">
+                        <?php foreach ($img as $value) { ?>
+                            
+                        
+                            <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
+                               	<a href="<?php echo base_url('uploads/images/winner/').$value->image ?>" class="media-box magnific-image"> <img src="<?php echo base_url('uploads/images/winner/').$value->image ?>" alt="" style="width: 550px;height: 400px"> </a>
+                            </li>
+                        <?php } ?>
+                        <!-- <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item sliders format-gallery">
                             <div class="media-box">
                                 <div class="flexslider galleryflex" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="slide" data-pause="yes">
                                     <ul class="slides">
-                                        <li class="item"><a href="<?php echo base_url(); ?>assets/images/gallery2.jpg" class="popup-image"><img src="<?php echo base_url(); ?>assets/images/gallery2.jpg" alt=""></a></li>
-                                        <li class="item"><a href="<?php echo base_url(); ?>assets/images/gallery3.jpg" class="popup-image"><img src="<?php echo base_url(); ?>assets/images/gallery3.jpg" alt=""></a></li>
+                                        <li class="item"><a href="<?php //echo base_url(); ?>assets/images/gallery2.jpg" class="popup-image"><img src="<?php //echo base_url(); ?>assets/images/gallery2.jpg" alt=""></a></li>
+                                        <li class="item"><a href="<?php //echo base_url(); ?>assets/images/gallery3.jpg" class="popup-image"><img src="<?php //echo base_url(); ?>assets/images/gallery3.jpg" alt=""></a></li>
                                     </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item links format-link">
-                           	<a href="#" target="_blank" class="media-box"> <img src="<?php echo base_url(); ?>assets/images/gallery4.jpg" alt=""> </a>
-                        </li>
-                        <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
-                           	<a href="<?php echo base_url(); ?>assets/images/gallery6.jpg" class="media-box magnific-image"> <img src="<?php echo base_url(); ?>assets/images/gallery6.jpg" alt=""> </a>
+                        </li> -->
+                        <!-- <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item links format-link">
+                           	<a href="#" target="_blank" class="media-box"> <img src="<?php //echo base_url(); ?>assets/images/gallery4.jpg" alt=""> </a>
                         </li>
                         <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
-                           	<a href="<?php echo base_url(); ?>assets/images/gallery7.jpg" class="media-box magnific-image"> <img src="<?php echo base_url(); ?>assets/images/gallery7.jpg" alt=""> </a>
+                           	<a href="<?php //echo base_url(); ?>assets/images/gallery6.jpg" class="media-box magnific-image"> <img src="<?php //echo base_url(); ?>assets/images/gallery6.jpg" alt=""> </a>
                         </li>
                         <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
-                           	<a href="<?php echo base_url(); ?>assets/images/gallery8.jpg" class="media-box magnific-image"> <img src="<?php echo base_url(); ?>assets/images/gallery8.jpg" alt=""> </a>
+                           	<a href="<?php //echo base_url(); ?>assets/images/gallery7.jpg" class="media-box magnific-image"> <img src="<?php //echo base_url(); ?>assets/images/gallery7.jpg" alt=""> </a>
                         </li>
+                        <li class="col-md-6 col-sm-6 col-xs-6 grid-item gallery-grid-item images format-image">
+                           	<a href="<?php //echo base_url(); ?>assets/images/gallery8.jpg" class="media-box magnific-image"> <img src="<?php //echo base_url(); ?>assets/images/gallery8.jpg" alt=""> </a>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- Page Pagination -->
-                <nav>
+                <!-- <nav>
                     <ul class="pagination pagination-lg">
                         <li>
                             <a href="#" aria-label="Previous">
@@ -63,7 +67,7 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
         </div>
     </div>
