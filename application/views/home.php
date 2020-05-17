@@ -40,28 +40,16 @@
        	</div>
         <!-- End Hero Slider -->
     </div>
-    <div class="featured-links row">
-    	<a href="#" class="featured-link col-md-4 col-sm-4">
-        	<span>View our causes</span>
-        	<strong>Donate now</strong>
-        </a>
-    	<a href="#" class="featured-link col-md-4 col-sm-4">
-        	<span>Become a volunteer</span>
-        	<strong>Join us now</strong>
-        </a>
-    	<a href="#" class="featured-link col-md-4 col-sm-4">
-        	<span>View our events</span>
-        	<strong>Get involved</strong>
-        </a>
-    </div>
+
     <!-- Main Content -->
     <div id="main-container">
     	<div class="content">
-        	<div class="lgray-bg padding-tb75">
+			<?php foreach ($category as $cat){ ?>
+        	<div class="lgray-bg padding-tb45">
             	<div class="container">
                 	<div class="row">
                     	<div class="col-md-12 col-sm-12">
-                        		<h2 class="block-title">Born to Give raises money for charity by offering incredible experiences</h2>
+                        		<h2 class="block-title"><?php echo $cat->name; ?></h2>
                         		<div class="spacer-30"></div>
                         </div>
 
@@ -70,6 +58,7 @@
                         <div class="row">
                             <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
                                <?php foreach (array_reverse($posts) as $post){ ?>
+								   <?php if($post->cid == $cat->id){ ?>
                                 <li class="item">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
@@ -85,127 +74,15 @@
                                         </div>
                                     </div>
                                 </li>
-								<?php } ?>
+								<?php } } ?>
 
                             </ul>
                         </div>
                     </div>
                	</div>
             </div>
-            
-            <div class="featured-texts row">
-            	<div class="featured-text col-md-3 col-sm-3">
-                	<span>Successful projects</span>
-                    <strong>1043</strong>
-                </div>
-            	<div class="featured-text col-md-3 col-sm-3">
-                	<span>People Impacted</span>
-                    <strong>206400</strong>
-                </div>
-            	<div class="featured-text col-md-3 col-sm-3">
-                	<span>Total amount raised</span>
-                    <strong>$7850098</strong>
-                </div>
-            	<div class="featured-text col-md-3 col-sm-3">
-                	<span>Total Volunteers</span>
-                    <strong>217</strong>
-                </div>
-            </div>
-            
-            <div class="padding-tb75 position-relative">
-            	<div class="half-bg-right accent-bg"></div>
-            	<div class="container">
-                	<div class="row">
-                    	<div class="col-md-6">
-                        	<h2 class="block-title">Upcoming events</h2>
-                            <div class="spacer-20"></div>
-                            	<ul class="events-compact-list">
-                                	<li class="event-list-item">	
-                                    	<span class="event-date">
-                                        	<span class="date">14</span>
-                                            <span class="month">Jan</span>
-                                            <span class="year">2016</span>
-                                        </span>
-                                        <div class="event-list-cont">
-                                            <span class="meta-data">Thursday, 11:20 AM</span>
-                                        	<h4 class="post-title"><a href="#">Summer Camp: Students Get Together</a></h4>
-                    						<p>Lorem ipsum dolor sit amet, consectet adipiscing elit Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada...</p>
-                                        </div>
-                                    </li>
-                                	<li class="event-list-item">
-                                    	<span class="event-date">
-                                        	<span class="date">18</span>
-                                            <span class="month">Jan</span>
-                                            <span class="year">2016</span>
-                                        </span>
-                                        <div class="event-list-cont">
-                                            <span class="meta-data">Monday, 07:00 PM</span>
-                                        	<h4 class="post-title"><a href="#">Fundraising for meals</a></h4>
-                    						<p>Lorem ipsum dolor sit amet, consectet adipiscing elit Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada...</p>
-                                        </div>
-                                    </li>
-                                	<li class="event-list-item">
-                                    	<span class="event-date">
-                                        	<span class="date">26</span>
-                                            <span class="month">Feb</span>
-                                            <span class="year">2016</span>
-                                        </span>
-                                        <div class="event-list-cont">
-                                            <span class="meta-data">Friday, 01:00 PM</span>
-                                        	<h4 class="post-title"><a href="#">Green Environment</a></h4>
-                    						<p>Lorem ipsum dolor sit amet, consectet adipiscing elit Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada...</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                        </div>
-                        
-                    	<div class="col-md-6">
-                            <div class="gallery-updates cols2 clearfix">
-                                <ul>
-                                    <li class="format-image grid-item">
-                                        <a href="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" class="media-box magnific-image"> <img src="<?php echo base_url();?>assets/images/gallery1.jpg" alt=""> </a>
-                                    </li>
-                                    <li class="format-gallery grid-item">
-                                        <div class="media-box">
-                                            <div class="flexslider galleryflex" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="slide" data-pause="yes">
-                                                <ul class="slides">
-                                                    <li class="item"><a href="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" class="popup-image"><img src="<?php echo base_url();?>assets/images/gallery3.jpg" alt=""></a></li>
-                                                    <li class="item"><a href="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" class="popup-image"><img src="<?php echo base_url();?>assets/images/gallery4.jpg" alt=""></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="format-link grid-item">
-                                        <a href="http://www.google.com" target="_blank" class="media-box"> <img src="<?php echo base_url();?>assets/images/gallery4.jpg" alt=""> </a>
-                                    </li>
-                                    <li class="format-video grid-item">
-                                        <a href="https://vimeo.com/47532705" class="media-box magnific-video"> <img src="<?php echo base_url();?>assets/images/gallery6.jpg" alt=""> </a>
-                                    </li>
-                                    <li class="grid-item format-image">
-                                        <a href="http://placehold.it/800x533&amp;text=IMAGE+PLACEHOLDER" class="media-box magnific-image"> <img src="<?php echo base_url();?>assets/images/event1.jpg" alt=""> </a>
-                                    </li>
-                                    <li class="grid-item format-image">
-                                        <a href="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" class="media-box magnific-image"> <img src="<?php echo base_url();?>assets/images/staff1.jpg" alt=""> </a>
-                                    </li>
-                                </ul>
-                                <div class="gallery-updates-overlay">
-                                    <i class="icon-multiple-image"></i> Updates from our gallery
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="parallax parallax6 padding-tb100" style="background-image:url(<?php echo base_url();?>assets/images/parallax5.jpg)">
-            	<div class="container">
-                    <div class="parallax-text-block pull-right">
-                        <h3>Nepal has been seriously devastated by the recent earthquake.</h3>
-                        <p>Over 8,000 people have died (with death toll rising), thousands more are injured, and countless more have been displaced. Many homes, <a href="#">temples</a>, and public monuments have been destroyed throughout the affected areas.</p>
-                        <a href="#" class="btn btn-primary">Donate to cause</a>
-                    </div>
-               	</div>
-            </div>
+            <?php } ?>
+
             
             <div class="padding-tb75 padding-b0">
                 <div class="container">
@@ -287,75 +164,35 @@
                 </div>
            	</div>
             
-            <div class="parallax parallax5 parallax-light text-align-center padding-tb100" style="background-image:url(<?php echo base_url();?>assets/images/parallax6.jpg)">
-            	<h2>Making someone smile is the most<br>beautiful thing in this world</h2>
-                <a href="#" class="parallax-icon-link"><i class="fa fa-5x fa-play-circle-o"></i></a>
-            </div>
+
             
             <div class="padding-tb75 lgray-bg">
             	<div class="container">
                 	<div class="row">
                     	<div class="col-md-4 col-sm-4">
                        		<h2 class="block-title">Latest news from our blog</h2>
-                            <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim.</p>
+
                         </div>
                         
-                        <div class="col-md-8 col-sm-8">
+                        <div class="col-md-12 col-sm-12">
                             <div class="carousel-wrapper">
                                 <div class="row">
                                     <ul class="owl-carousel carousel-fw" id="news-slider" data-columns="2" data-autoplay="" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="1" data-items-tablet="1" data-items-mobile="1">
-                                        <li class="item">
+                                        <?php foreach ($blogs as $blog) { ?>
+										<li class="item">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="single-event.html" class="media-box">
-                                                        <img src="<?php echo base_url();?>assets/images/post1.jpg" alt="">
+                                                        <img src="<?php echo base_url('uploads/images/blog/').$blog->banner;?>" alt="">
                                                     </a>
                                                     <div class="grid-item-content">
-                                                        <h3 class="post-title"><a href="single-post.html">A single person can change million lives</a></h3>
-                                                        <span class="meta-data">Posted on 11th Dec, 2015</span>
+                                                        <h3 class="post-title"><a href="single-post.html"><?php echo $blog->title; ?></a></h3>
+                                                        <span class="meta-data">Posted on <?php echo date('d-m-Y',strtotime($blog->created)); ?></span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="item">
-                                            <div class="grid-item blog-grid-item format-standard">
-                                                <div class="grid-item-inner">
-                                                    <a href="single-event.html" class="media-box">
-                                                        <img src="<?php echo base_url();?>assets/images/post3.jpg" alt="">
-                                                    </a>
-                                                    <div class="grid-item-content">
-                                                        <h3 class="post-title"><a href="single-post.html">Donate your woolens this winter</a></h3>
-                                                        <span class="meta-data">Posted on 11th Dec, 2015</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="item">
-                                            <div class="grid-item blog-grid-item format-standard">
-                                                <div class="grid-item-inner">
-                                                    <a href="single-event.html" class="media-box">
-                                                        <img src="<?php echo base_url();?>assets/images/post2.jpg" alt="">
-                                                    </a>
-                                                    <div class="grid-item-content">
-                                                        <h3 class="post-title"><a href="single-post.html">How to survive the tough path of life</a></h3>
-                                                        <span class="meta-data">Posted on 08th Dec, 2015</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="item">
-                                            <div class="grid-item blog-grid-item format-standard">
-                                                <div class="grid-item-inner">
-                                                    <a href="single-event.html" class="media-box">
-                                                        <img src="<?php echo base_url();?>assets/images/post3.jpg" alt="">
-                                                    </a>
-                                                    <div class="grid-item-content">
-                                                        <h3 class="post-title"><a href="single-post.html">Donate your woolens this winter</a></h3>
-                                                        <span class="meta-data">Posted on 11th Dec, 2015</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+										<?php } ?>
                                     </ul>
                                 </div>
                             </div>
@@ -363,95 +200,12 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="accent-bg padding-tb20 cta-fw">
-    			<div class="container">
-                    <a href="#" class="btn btn-default btn-ghost btn-light btn-rounded pull-right">Become a volunteer</a>
-                    <h4>Let's start doing your bit for the world. Join us as a Volunteer</h4>
-                </div>
-            </div>
+
         </div>
     </div>
    <?php $this->load->view('footer'); ?>
 </div>
 
-<!-- Donate Form Modal -->
-<div class="modal fade" id="DonateModal" tabindex="-1" role="dialog" data-backdrop="static">
-  	<div class="modal-dialog" role="document">
-    	<div class="modal-content">
-      		<div class="modal-header">
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        		<div class="row">
-                    <div class="col-md-6 col-sm-6 donate-amount-option">
-                        <h4>Choose an amount</h4>
-                        <ul class="predefined-amount">
-                            <li><label><input type="radio" name="donation-amount">$10</label></li>
-                            <li><label><input type="radio" name="donation-amount">$20</label></li>
-                            <li><label><input type="radio" name="donation-amount">$30</label></li>
-                            <li><label><input type="radio" name="donation-amount">$50</label></li>
-                            <li><label><input type="radio" name="donation-amount">$100</label></li>
-                        </ul>
-                    </div>
-                    <span class="donation-choice-breaker">Or</span>
-                    <div class="col-md-6 col-sm-6 donate-amount-option">
-                        <h4>Enter your own</h4>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">$</span>
-                            <input type="number" class="form-control">
-                        </div>
-                    </div>
-               	</div>
-      		</div>
-      		<div class="modal-body">
-       			<div class="row">
-                	<div class="col-md-6 col-sm-6 donation-form-infocol">
-                    	<h4>Address</h4>
-                        <input type="text" class="form-control" placeholder="Address line 1">
-                        <input type="text" class="form-control" placeholder="Address line 2">
-       					<div class="row">
-                			<div class="col-md-8 col-sm-8 col-xs-8">
-                        		<input type="text" class="form-control" placeholder="State/City">
-                            </div>
-                			<div class="col-md-4 col-sm-4 col-xs-4">
-                        		<input type="text" class="form-control" placeholder="Zipcode">
-                            </div>
-                    	</div>
-       					<div class="row">
-                			<div class="col-md-3 col-sm-3 col-xs-3">
-                        		<label>Country</label>
-                            </div>
-                			<div class="col-md-9 col-sm-9 col-xs-9">
-                                <select class="selectpicker">
-                                    <option>United States</option>
-                                    <option>Australia</option>
-                                    <option>Netherlands</option>
-                                </select>
-                            </div>
-                    	</div>
-                    </div>
-                	<div class="col-md-6 col-sm-6 donation-form-infocol">
-                    	<h4>Personal info</h4>
-       					<div class="row">
-                			<div class="col-md-6 col-sm-6 col-xs-6">
-                        		<input type="text" class="form-control" placeholder="First name">
-                            </div>
-                			<div class="col-md-6 col-sm-6 col-xs-6">
-                        		<input type="text" class="form-control" placeholder="Last name">
-                            </div>
-                    	</div>
-                        <input type="text" class="form-control" placeholder="Email address">
-                        <input type="text" class="form-control" placeholder="Phone no.">
-                        <label class="checkbox"><input type="checkbox"> Register me on this website</label>
-                    </div>
-                 </div>
-      		</div>
-      		<div class="modal-footer text-align-center">
-        		<button type="button" class="btn btn-primary">Make your donation now</button>
-                <div class="spacer-20"></div>
-                <p class="small">Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim. Aenean vitae diam id lacus fringilla maximus. Mauris auctor efficitur nisl, non blandit urna fermentum nec. Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi.</p>
-      		</div>
-    	</div>
-  	</div>
-</div>
+
 
 <?php $this->load->view('js-links');?>
