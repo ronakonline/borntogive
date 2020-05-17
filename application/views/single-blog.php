@@ -17,7 +17,7 @@
     	<div class="content">
         	<div class="container">
             	<div class="row">
-                	<div class="col-md-8 content-block" style="padding-top: 20px; ">
+                	<div class="col-md-8 content-block" style="padding-top: 40px; ">
                     	<!-- <h3>A single person can change million lives</h3> -->
                     	<div class="post-media">
                         	<img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="">
@@ -141,7 +141,7 @@
                     </div>
                     
                     <!-- Sidebar -->
-                    <div class="col-md-4 sidebar-block" style="margin-top: 20px">
+                    <div class="col-md-4 sidebar-block" style="margin-top: 40px">
                         <div class="widget tabbed_content tabs">
                             <ul class="nav nav-tabs">
                                 <li class="active"> <a data-toggle="tab" href="#Trecent">Recent</a> </li>
