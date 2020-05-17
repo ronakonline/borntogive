@@ -2,10 +2,12 @@
 <?php $this->load->view('header'); ?>
     <!-- Hero Area -->
     <div class="hero-area">
-    	<div class="page-banner parallax" style="background-image:url(http://placehold.it/1280x400&amp;text=IMAGE+PLACEHOLDER);">
+    	<div class="page-banner parallax" style="background-image:url(<?php echo base_url('uploads/images/blog/inside8.jpg'); ?>)">
         	<div class="container">
             	<div class="page-banner-text">
-        			<h1 class="block-title"><?php echo $blog[0]->title; ?></h1>
+                    <?php foreach ($blogs as $blog){ ?>
+                        <?php if($blog->id == $blogid){ ?>
+        			<h1 class="block-title"><?php echo $blog->title; ?></h1>
                 </div>
             </div>
         </div>
@@ -18,10 +20,10 @@
                 	<div class="col-md-8 content-block" style="padding-top: 20px; ">
                     	<!-- <h3>A single person can change million lives</h3> -->
                     	<div class="post-media">
-                        	<img src="<?php echo base_url('uploads/images/blog/').$blog[0]->banner; ?>" alt="">
+                        	<img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="">
                         </div>
                         <div class="post-content">
-                        	<p><?php echo $blog[0]->blog; ?></p>
+                        	<p><?php echo $blog->blog; ?></p>
                       	</div>
                         <!-- <div class="tag-cloud">
                             <i class="fa fa-tags"></i> 
@@ -139,42 +141,32 @@
                     </div>
                     
                     <!-- Sidebar -->
-                    <div class="col-md-4 sidebar-block">
+                    <div class="col-md-4 sidebar-block" style="margin-top: 20px">
                         <div class="widget tabbed_content tabs">
                             <ul class="nav nav-tabs">
                                 <li class="active"> <a data-toggle="tab" href="#Trecent">Recent</a> </li>
-                                <li> <a data-toggle="tab" href="#Tpopular">Popular</a> </li>
-                                <li> <a data-toggle="tab" href="#Tcomments">Tags</a> </li>
+                               <!--  <li> <a data-toggle="tab" href="#Tpopular">Popular</a> </li>
+                                <li> <a data-toggle="tab" href="#Tcomments">Tags</a> </li> -->
                             </ul>
                             <div class="tab-content">
                                 <div id="Trecent" class="tab-pane active">
                                     <div class="widget recent_posts">
                                         <ul>
+                                            <!-- <?php  ?> -->
+                                            <?php foreach (array_reverse($blogs) as $blog) { 
+                                                if ($blog->id != $blogid) {?>
                                             <li>
-                                                <a href="single-post.html" class="media-box">
-                                                    <img src="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" alt="">
+                                                <a href="<?php echo base_url('Blog/single_blog/').$blog->id ?>" class="media-box">
+                                                    <img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="">
                                                 </a>
-                                                <h5><a href="single-post.html">A single person can change million lives</a></h5>
-                                                <span class="meta-data grid-item-meta">Posted on 11th Dec, 2015</span>
+                                                <h5><a href="<?php echo base_url('Blog/single_blog/').$blog->id ?>"><?php echo substr(strip_tags($blog->blog),0,70) ?>...</a></h5>
+                                                <span class="meta-data grid-item-meta">Posted on <?php echo date('d-m-Y',strtotime($blog->created)); ?></span>
                                             </li>
-                                            <li>
-                                                <a href="single-post.html" class="media-box">
-                                                    <img src="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" alt="">
-                                                </a>
-                                                <h5><a href="single-post.html">Donate your woolens this winter</a></h5>
-                                                <span class="meta-data grid-item-meta">Posted on 11th Dec, 2015</span>
-                                            </li>
-                                            <li>
-                                                <a href="single-post.html" class="media-box">
-                                                    <img src="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" alt="">
-                                                </a>
-                                                <h5><a href="single-post.html">How to survive the tough path of life</a></h5>
-                                                <span class="meta-data grid-item-meta">Posted on 06th Dec, 2015</span>
-                                            </li>
+                                            <?php } } ?>
                                         </ul>
                                     </div>
                                 </div>
-                                <div id="Tpopular" class="tab-pane">
+                                <!-- <div id="Tpopular" class="tab-pane">
                                     <div class="widget recent_posts">
                                         <ul>
                                             <li>
@@ -218,10 +210,10 @@
                                         <a href="#">Soul</a>
                                         <a href="#">Power</a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="widget sidebar-widget widget_categories">
+                        <!-- <div class="widget sidebar-widget widget_categories">
                         	<h3 class="widgettitle">Post Categories</h3>
                             <ul>
                             	<li><a href="#">Education</a> (3)</li>
@@ -230,16 +222,16 @@
                             	<li><a href="#">Wild life</a> (2)</li>
                             	<li><a href="#">Small business</a> (12)</li>
                             </ul>
-                        </div>
-                        <div class="widget sidebar-widget widget_search">
+                        </div> -->
+                        <!-- <div class="widget sidebar-widget widget_search">
                         	<div class="input-group">
                           		<input type="text" class="form-control" placeholder="Enter your keywords">
                           		<span class="input-group-btn">
                             		<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                           		</span>
                       		</div>
-                        </div>
-                        <div class="widget widget_testimonials">
+                        </div> -->
+                        <!-- <div class="widget widget_testimonials">
                         	<h3 class="widgettitle">Stories of change</h3>
                             <div class="carousel-wrapper">
                                 <div class="row">
@@ -273,11 +265,12 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php } } ?>
     <?php $this->load->view('footer'); ?>
     <?php $this->load->view('js-links');?>
