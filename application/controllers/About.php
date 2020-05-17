@@ -6,6 +6,7 @@ class About extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('about');
+		$data = frontend_data();
+		$this->load->view('about',$data);
 	}
 }

@@ -6,9 +6,11 @@ if(! function_exists('frontend_data')){
 		$ci->load->model('CategoryM');
 		$ci->load->model('PostM');
 		$ci->load->model('BlogM');
+		$ci->load->model('TestimonialM');
 		$data['category']= $ci->CategoryM->list_categories();
 		$data['posts'] = $ci->PostM->all_posts();
 		$data['blogs'] = $ci->BlogM->list_blogs();
+		$data['testimonial'] = $ci->TestimonialM->list_testimonial();
 		if($cci!=null){
 			$data['ccid'] = $cci;
 		}

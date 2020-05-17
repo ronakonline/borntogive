@@ -46,6 +46,14 @@
 					</ul>
 				</li>
 				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-group"></i> <span> Testimonial </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+					<ul class="list-unstyled">
+						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->
+						<li><a href="<?php echo base_url(); ?>admin/Testimonial">Add Testimonial</a></li>			
+						<li><a href="<?php echo base_url(); ?>admin/Testimonial/list_testimonial">All Testimonial</a></li>
+					</ul>
+				</li>
+				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span> Winner </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
 					<ul class="list-unstyled">
 						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->

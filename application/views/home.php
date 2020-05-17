@@ -86,61 +86,36 @@
             
             <div class="padding-tb75 padding-b0">
                 <div class="container">
-                	<div class="text-align-center">
-                       	<h2 class="block-title block-title-center">Some of the success stories</h2>
+                    <div class="text-align-center">
+                        <h2 class="block-title block-title-center">Some of the success stories</h2>
+                    </div>
+                    <div class="carousel-wrapper">
+                        <div class="row">
+                            <ul class="owl-carousel carousel-fw" id="testimonials-slider" data-columns="2" data-autoplay="5000" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                                <?php foreach ($testimonial as$value) { ?>
+                                    
+                                
+                                <li class="item">
+                                    <div class="testimonial-block">
+                                        <blockquote>
+                                            <p><?php echo $value->feedback; ?></p>
+                                        </blockquote>
+                                        <div class="testimonial-avatar"><img src="<?php echo base_url('uploads/images/testimonial/').$value->profile; ?>" alt="" width="70" height="70"></div>
+                                        <div class="testimonial-info">
+                                            <div class="testimonial-info-in">
+                                                <strong><?php echo $value->name; ?></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-wrapper">
-                    <div class="row">
-                        <ul class="owl-carousel carousel-fw" id="stories-slider" data-columns="1" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="1" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
-                            <li class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="<?php echo base_url();?>assets/images/causeg3.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                    	<div class="story-slider-content">
-                                    		<div class="story-slider-table">
-                                    			<div class="story-slider-cell">
-                                                    <blockquote>
-                                                        <h3>Lori now study with her friends</h3>
-                                                        <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim. Aenean vitae diam id lacus fringilla maximus. Mauris auctor efficitur nisl, non blandit urna fermentum nec.</p>
-                                                    </blockquote>
-                                                    <a href="#" class="btn btn-primary">View full story</a>
-                                              	</div>
-                                           	</div>
-                                      	</div>
-                                    </div>
-                                </div>
-                           	</li>
-                            <li class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER" alt="" class="img-responsive">
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                    	<div class="story-slider-content">
-                                    		<div class="story-slider-table">
-                                    			<div class="story-slider-cell">
-                                                    <blockquote>
-                                                        <h3>Everyday food for Mumbai children</h3>
-                                                        <p>Vestibulum quam nisi, pretium a nibh sit amet, consectetur hendrerit mi. Aenean imperdiet lacus sit amet elit porta, et malesuada erat bibendum. Cras sed nunc massa. Quisque tempor dolor sit amet tellus malesuada, malesuada iaculis eros dignissim.</p>
-                                                    </blockquote>
-                                                    <a href="#" class="btn btn-primary">View full story</a>
-                                              	</div>
-                                           	</div>
-                                      	</div>
-                                    </div>
-                                </div>
-                           	</li>
-                      	</ul>
-                  	</div>
-               	</div>
-          	</div>
+            </div>
             <!-- Partner Carousel -->
-            <div class="partner-carousel">
+           <!--  <div class="partner-carousel">
             	<div class="container">
                 	<div class="row">
                     	<div class="col-md-3 col-sm-3">
@@ -162,7 +137,7 @@
                         </div>
                    	</div>
                 </div>
-           	</div>
+           	</div> -->
             
 
             

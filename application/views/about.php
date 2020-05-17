@@ -80,45 +80,23 @@
                     <div class="carousel-wrapper">
                         <div class="row">
                             <ul class="owl-carousel carousel-fw" id="testimonials-slider" data-columns="2" data-autoplay="5000" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                                <?php foreach ($testimonial as$value) { ?>
+                                    
+                                
                                 <li class="item">
                                     <div class="testimonial-block">
                                         <blockquote>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.</p>
+                                            <p><?php echo $value->feedback; ?></p>
                                         </blockquote>
-                                        <div class="testimonial-avatar"><img src="http://placehold.it/100x100&amp;text=IMAGE+PLACEHOLDER" alt="" width="70" height="70"></div>
+                                        <div class="testimonial-avatar"><img src="<?php echo base_url('uploads/images/testimonial/').$value->profile; ?>" alt="" width="70" height="70"></div>
                                         <div class="testimonial-info">
                                             <div class="testimonial-info-in">
-                                                <strong>Ada Ajimobi</strong>
+                                                <strong><?php echo $value->name; ?></strong>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
-                                    <div class="testimonial-block">
-                                        <blockquote>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.</p>
-                                        </blockquote>
-                                        <div class="testimonial-avatar"><img src="http://placehold.it/100x100&amp;text=IMAGE+PLACEHOLDER" alt="" width="70" height="70"></div>
-                                        <div class="testimonial-info">
-                                            <div class="testimonial-info-in">
-                                                <strong>Chloe Lévesque</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="testimonial-block">
-                                        <blockquote>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.</p>
-                                        </blockquote>
-                                        <div class="testimonial-avatar"><img src="http://placehold.it/100x100&amp;text=IMAGE+PLACEHOLDER" alt="" width="70" height="70"></div>
-                                        <div class="testimonial-info">
-                                            <div class="testimonial-info-in">
-                                                <strong>Ada Ajimobi</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
