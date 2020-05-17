@@ -16,19 +16,20 @@
     	<div class="content">
         	<div class="container">
                 <ul class="grid-holder isotope gallery-items" data-sort-id="gallery">
-					<?php foreach ($blogs as $blog) {} ?>
+					<?php foreach ($blogs as $blog) { ?>
                     <li class="col-md-4 col-sm-6 grid-item blog-grid-item format-standard">
                         <div class="grid-item-inner">
-                            <a href="single-event.html" class="media-box">
-                                <img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="">
+                            <a href="<?php echo base_url('Blog/single_blog/').$blog->id ?>" class="media-box">
+                                <img src="<?php echo base_url('uploads/images/blog/').$blog->banner; ?>" alt="" style="width: 368px;height: 215px;">
                             </a>
                             <div class="grid-item-content">
-                                <h3 class="post-title"><a href="single-post.html"><?php echo $blog->title; ?></a></h3>
+                                <h3 class="post-title"><a href="<?php echo base_url('Blog/single_blog/').$blog->id ?>"><?php echo $blog->title; ?></a></h3>
                                 <span class="meta-data"><i class="fa fa-calendar"></i> Posted on <?php echo date('d-m-Y',strtotime($blog->created)); ?></span>
                                 <p><?php echo substr(strip_tags($blog->blog),0,70) ?>...</p>
                             </div>
                         </div>
                     </li>
+                <?php } ?>
                 </ul>
                
             </div>
