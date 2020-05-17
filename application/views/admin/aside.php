@@ -46,6 +46,14 @@
 					</ul>
 				</li>
 				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span> Winner </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+					<ul class="list-unstyled">
+						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->
+						<li><a href="<?php echo base_url(); ?>admin/Winner">Add Winner</a></li>			
+						<li><a href="<?php echo base_url(); ?>admin/Winner/list_winner">All Winner</a></li>
+					</ul>
+				</li>
+				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span> SEO </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
 					<ul class="list-unstyled">
 						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->

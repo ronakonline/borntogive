@@ -14,11 +14,7 @@
         <link href="<?php echo base_url();?>assets/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>assets/admin/css/icons.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>assets/admin/css/style.css" rel="stylesheet" type="text/css">
-        <!-- DataTables -->
-        <link href="<?php echo base_url();?>assets/admin/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url();?>assets/admin/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <!-- Responsive datatable examples -->
-        <link href="<?php echo base_url();?>assets/admin/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      
 		<!-- JavaScript -->
 		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
@@ -30,6 +26,9 @@
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
 		<!-- Bootstrap theme -->
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+        <!-- Dropzone css -->
+        <link href="<?php echo base_url();?>assets/admin/plugins/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url();?>assets/admin/plugins/dropify/css/dropify.min.css" rel="stylesheet">
     </head>
 
 
@@ -132,11 +131,8 @@
         <script src="<?php echo base_url();?>assets/admin/js/jquery.nicescroll.js"></script>
         <script src="<?php echo base_url();?>assets/admin/js/jquery.scrollTo.min.js"></script>
 
-        <!-- Required datatable js -->
-        <script src="<?php echo base_url();?>assets/admin/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
         <!-- Buttons examples -->
-        <script src="<?php echo base_url();?>assets/admin/plugins/datatables/dataTables.buttons.min.js"></script>
+      
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/buttons.bootstrap4.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/jszip.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/pdfmake.min.js"></script>
@@ -144,20 +140,13 @@
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/buttons.html5.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/buttons.print.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/plugins/datatables/buttons.colVis.min.js"></script>
-        <!-- Responsive examples -->
-        <script src="<?php echo base_url();?>assets/admin/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/plugins/datatables/responsive.bootstrap4.min.js"></script>
- 
+
          <!-- Datatable init js -->
          <script src="<?php echo base_url();?>assets/admin/pages/datatables.init.js"></script>
 
         <!-- App js -->
         <script src="<?php echo base_url();?>assets/admin/js/app.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#datatable2').DataTable();  
-            } );
-        </script>
+        >
 <!-- Alertify js -->
 <script src="<?php echo base_url();?>assets/admin/plugins/alertify/js/alertify.js"></script>
 <script src="<?php echo base_url();?>assets/admin/pages/alertify-init.js"></script>

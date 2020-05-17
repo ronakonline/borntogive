@@ -27,7 +27,7 @@
     	<div class="content">
         	<div class="container">
             	<div class="row">
-                	<div class="col-md-8 content-block">
+                	<div class="col-md-8 content-block" style="margin-top: 30px;">
                     	<!-- <h3>Summer Camp: Students Get Together</h3> -->
                     	<div class="post-media">
                         	<img src="<?php echo base_url('uploads/images/post/').$post->banner_img1; ?>" alt="">
@@ -72,7 +72,7 @@
                         <div class="widget widget_recent_causes">
                             <!-- <h3 class="widgettitle"><strong><?php //echo $post->title; ?></strong></h3> -->
 
-                            <h4 style="margin-top: 10px;"><strong>You Will:</strong></h4>
+                            <h4 style="margin-top: 30px;"><strong>You Will:</strong></h4>
                             <p class="lead"><?php echo $post->youwill; ?></p>
                             <!-- <ul>
                                 <li>
@@ -171,12 +171,12 @@
                                                 <li class="item">
                                                     <div class="grid-item cause-grid-item small-business format-standard">
                                                         <div class="grid-item-inner">
-                                                            <a href="<?php echo base_url('Page/single_post/').$value->id ?>" class="media-box">
+                                                            <a href="<?php echo base_url('Page/single_post/').$ccid.'/'.$value->id ?>" class="media-box">
                                                                 <img src="<?php echo base_url('uploads/images/post/').$value->banner_img1; ?>" alt="" style="height: 175px;width: 290px;">
                                                             </a>
                                                             <div class="grid-item-content">
                                                                 <!-- <a class="cProgress" data-complete="88" data-color="F23827" data-toggle="tooltip" data-original-title="10 days left"><strong></strong></a> -->
-                                                                <h3 class="post-title"><a href="<?php echo base_url('Page/single_post/').$value->id ?>"><?php echo $value->title; ?></a></h3>
+                                                                <h3 class="post-title"><a href="<?php echo base_url('Page/single_post/').$ccid.'/'.$value->id ?>"><?php echo $value->title; ?></a></h3>
                                                                 <!-- <div class="meta-data">Donated $26400 / <span class="cause-target">$30000</span></div> -->
                                                             </div>
                                                             <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a> -->

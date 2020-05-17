@@ -6,6 +6,9 @@ class Winner extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('winner');
+		$data = frontend_data();
+		$this->load->model('WinnerM');
+		$data['img'] = $this->WinnerM->getwinner();
+		$this->load->view('winner',$data);
 	}
 }
