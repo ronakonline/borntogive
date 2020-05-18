@@ -96,7 +96,7 @@
             <?php } ?>
 
             
-            <div class="padding-tb75 padding-b0">
+            <div class="padding-tb75 padding-b10">
                 <div class="container">
                     <div class="text-align-center">
                         <h2 class="block-title block-title-center">Some of the success stories</h2>
@@ -170,7 +170,7 @@
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="<?php echo base_url('Blog/single_blog/').$blog->id; ?>" class="media-box">
-                                                        <img src="<?php echo base_url('uploads/images/blog/').$blog->banner;?>" alt="">
+                                                        <img src="<?php echo base_url('uploads/images/blog/').$blog->banner;?>" alt="" style="height: 342px; width: 555px;">
                                                     </a>
                                                     <div class="grid-item-content">
                                                         <h3 class="post-title"><a href="<?php echo base_url('Blog/single_blog/').$blog->id; ?>"><?php echo $blog->title; ?></a></h3>
