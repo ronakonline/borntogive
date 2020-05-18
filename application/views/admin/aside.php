@@ -54,6 +54,14 @@
 					</ul>
 				</li>
 				<li class="has_sub">
+					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-group"></i> <span> Cards </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+					<ul class="list-unstyled">
+						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->
+						<li><a href="<?php echo base_url(); ?>admin/Cards">Add Card</a></li>			
+						<li><a href="<?php echo base_url(); ?>admin/Cards/list_cards">All Cards</a></li>
+					</ul>
+				</li>
+				<li class="has_sub">
 					<a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-areaspline"></i> <span> Winner </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
 					<ul class="list-unstyled">
 						<!-- <li><a href="<?php //echo base_url(); ?>admin/Seo/">Add SEO</a></li> -->

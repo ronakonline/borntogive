@@ -1,4 +1,39 @@
-<?php $this->load->view('css-links'); ?>
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+<!-- Basic Page Needs
+  ================================================== -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Born to give - Charity/Crowdfunding HTML5 Template</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!-- CSS
+  ================================================== -->
+<!-- <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>assets/vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>assets/vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url(); ?>assets/vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/ie.css" media="screen" /><![endif]-->
+<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
+<!-- Color Style -->
+<link href="<?php echo base_url(); ?>assets/colors/color1.css" rel="stylesheet" type="text/css">
+<!-- SCRIPTS
+  ================================================== -->
+<script src="<?php echo base_url(); ?>assets/js/modernizr.js"></script><!-- Modernizr -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
 <?php $this->load->view('header'); ?>
     <!-- Hero Area -->
     <div class="hero-area" style="background: rgba(0, 0, 0, 0.5);">
@@ -189,12 +224,27 @@
                             </div>
                         </div>
                     <!-- </div> -->
+                    <div class="container row">
+                        <?php foreach ($card as $card) { ?>
+                            
+                        
+                            <div class="card ml-4 mb-4" style="width: 15rem;">
+                              <img class="card-img-top" src="<?php echo base_url('uploads/images/card/').$card->image ?>" alt="Card image cap">
+                              <div class="card-body text-center">
+                                <h4 class="card-title"><strong><?php echo $card->entries ?> Entries</strong></h4>
+                                <p class="card-text"><?php echo $card->detail ?></p>
+                                <a href="#" class="btn btn-primary">Donate $<?php echo $card->price ?></a>
+                              </div>
+                            </div>
+                        <?php } ?>
                     
+                    </div>
+                    
+
                     <div class="container" style="margin-bottom: 20px";>
-                        <div class="row">
-                            <h2><div class="text-center"><strong>Stuff our lawyers want you to read</strong></div></h2>
-                            <?php echo $post->details; ?>
-                        </div>
+                        
+                        <h2><div class="" style="text-align: center;"><strong>Stuff Your lawyers want you to read</strong></div></h2>
+                        <?php echo $post->details; ?>
                     </div>
 
 
