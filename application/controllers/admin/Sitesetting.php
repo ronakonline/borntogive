@@ -12,6 +12,37 @@ class Sitesetting extends CI_Controller{
         }
     }
 
+
+    public function about(){
+    	if($_SESSION['admin']){
+                $data['title']="About";
+                $this->load->model('SitesettingM');
+                $data['sitesetting']=$this->SitesettingM->listsitesetting();
+                 $this->load->view('admin/about',$data);
+        }else{
+            redirect('admin');
+        }
+    }
+
+
+    //Contact 
+    public function update_about(){
+		if($_SESSION['admin']){
+			$data = $this->input->post();
+			$this->load->model('SitesettingM');
+			$op= $this->SitesettingM->update_about($data);
+			if($op==1){
+				$_SESSION['success'] = "Updated Successfully";
+			}else{
+				$_SESSION['error'] = "Error Updating";
+			}
+			redirect('admin/Sitesetting/about');
+		}else{
+			redirect('admin');
+		}
+	}
+
+
     //Add Logo
     public function add_logo(){
     	if($_SESSION['admin']){

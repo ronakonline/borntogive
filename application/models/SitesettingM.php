@@ -36,6 +36,11 @@ class SitesettingM extends CI_Model{
 		return $q;
 	}
 
+	public function update_about($data){
+		$q = $this->db->query('update sitesetting set about="'.addslashes($data['about']).'"');
+		return $q;
+	}
+
 	public function update_footer($data){
 		$q = $this->db->query('update footer set about="'.$data['about'].'",facebook="'.$data['facebook'].'",instagram="'.$data['instagram'].'",twitter="'.$data['twitter'].'" where id = 1');
 		return $q;

@@ -17,17 +17,7 @@
         	<div class="container">
             	<div class="row">
                 	<div class="col-md-8 content-block">
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.</p>
-                        <p>Donec vel mauris quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.</p>
-                        <h3>There are multiple ways you can help others to change their lives</h3>
-                        <ul class="checks">
-                        	<li>Start a workplace campaign</li>
-                            <li>Youth involvement</li>
-                            <li>Become a Volunteer</li>
-                            <li>Become a partner</li>
-                            <li>Representative Program</li>
-                            
-                        </ul>
+                        <?php echo $about[0]->about; ?>
                     </div>
                     
                     <div class="col-md-4 sidebar-block">
