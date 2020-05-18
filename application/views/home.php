@@ -6,36 +6,48 @@
     	<!-- Start Hero Slider -->
       	<div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
             <ul class="slides">
-                <li class="parallax" style="background-image:url(<?php echo base_url();?>assets/images/slide4.jpg)">
+				<li class="parallax" style="background-image:url(<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide2;?>)">
+					<div class="flex-caption">
+						<div class="container">
+							<div class="flex-caption-table">
+								<div class="flex-caption-cell">
+									<div class="flex-caption-text text-align-center">
+										<h2><?php echo $sitesetting[0]->title1; ?></h2>
+										<p style="font-size: 24px;"><?php echo $sitesetting[0]->tagline1; ?></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+                <li class="parallax" style="background-image:url(<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide1;?>)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
                             	<div class="flex-caption-cell">
                                 	<div class="flex-caption-text">
-                                        <h2>Let your life be<br>an Inspiration</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectet<br>adipiscinge lit. Nam malesuada dapi<br>bus diam, ut fringilla purus..</p>
-                                        <a href="causes.html" class="btn btn-primary">Start with a little</a>
+                                        <h2><?php echo $sitesetting[0]->title1; ?></h2>
+										<p style="font-size: 24px;"><?php echo $sitesetting[0]->tagline1; ?></p>
                                     </div>
                                	</div>
                           	</div>
                         </div>
                     </div>
                 </li>
-                <li class="parallax" style="background-image:url(<?php echo base_url();?>assets/images/slide2.jpg)">
-                	<div class="flex-caption">
-                    	<div class="container">
-                        	<div class="flex-caption-table">
-                            	<div class="flex-caption-cell">
-                                	<div class="flex-caption-text text-align-center">
-                                        <h2>Make a difference for people<br>who needs it the most</h2>
-                                        <a href="causes.html" class="btn btn-primary">Start with a little</a>
-                                    </div>
-                               	</div>
-                          	</div>
-                        </div>
-                    </div>
-                </li>
-               
+				<li class="parallax" style="background-image:url(<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide3;?>)">
+					<div class="flex-caption">
+						<div class="container">
+							<div class="flex-caption-table">
+								<div class="flex-caption-cell">
+									<div class="flex-caption-text text-align-center">
+										<h2><?php echo $sitesetting[0]->title1; ?></h2>
+										<p style="font-size: 24px;"><?php echo $sitesetting[0]->tagline1; ?></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
           	</ul>
        	</div>
         <!-- End Hero Slider -->
@@ -62,12 +74,12 @@
                                 <li class="item">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
-                                            <a href="single-cause.html" class="media-box">
+                                            <a href="<?php echo base_url('Page/single_post/').$cat->id.'/'.$post->id; ?>" class="media-box">
                                                 <img src="<?php echo base_url('uploads/images/post/').$post->banner_img1;?>" alt="" style="width: 263px; height: 176px;">
                                             </a>
                                             <div class="grid-item-content">
 
-                                                <h3 class="post-title"><a href="single-cause.html"><?php echo $post->title; ?></a></h3>
+                                                <h3 class="post-title"><a href="<?php echo base_url('Page/single_post/').$cat->id.'/'.$post->id; ?>"><?php echo $post->title; ?></a></h3>
 
                                             </div>
 
@@ -157,11 +169,11 @@
 										<li class="item">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
-                                                    <a href="single-event.html" class="media-box">
+                                                    <a href="<?php echo base_url('Blog/single_blog/').$blog->id; ?>" class="media-box">
                                                         <img src="<?php echo base_url('uploads/images/blog/').$blog->banner;?>" alt="">
                                                     </a>
                                                     <div class="grid-item-content">
-                                                        <h3 class="post-title"><a href="single-post.html"><?php echo $blog->title; ?></a></h3>
+                                                        <h3 class="post-title"><a href="<?php echo base_url('Blog/single_blog/').$blog->id; ?>"><?php echo $blog->title; ?></a></h3>
                                                         <span class="meta-data">Posted on <?php echo date('d-m-Y',strtotime($blog->created)); ?></span>
                                                     </div>
                                                 </div>

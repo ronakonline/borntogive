@@ -7,10 +7,13 @@ if(! function_exists('frontend_data')){
 		$ci->load->model('PostM');
 		$ci->load->model('BlogM');
 		$ci->load->model('TestimonialM');
+		$ci->load->model('SitesettingM');
 		$data['category']= $ci->CategoryM->list_categories();
 		$data['posts'] = $ci->PostM->all_posts();
 		$data['blogs'] = $ci->BlogM->list_blogs();
 		$data['testimonial'] = $ci->TestimonialM->list_testimonial();
+		$data['sitesetting'] = $ci->SitesettingM->listsitesetting();
+		$data['footer'] = $ci->SitesettingM->editlist_footer();
 		if($cci!=null){
 			$data['ccid'] = $cci;
 		}

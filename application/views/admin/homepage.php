@@ -81,7 +81,7 @@
 											<label for="example-search-input" class="col-sm-2 col-form-label"></label>
 											<div class="col-md-10 ">
 												<div class="input-group mt-2">
-													<img id="target" height="200" width="250" src="<?php echo base_url('assets/images/slider/').$sitesetting[0]->slide1; ?>">
+													<img id="target" height="200" width="250" src="<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide1; ?>">
 												</div>
 											</div>
 										</div>
@@ -100,7 +100,7 @@
 											<label for="example-search-input" class="col-sm-2 col-form-label"></label>
 											<div class="col-md-10 ">
 												<div class="input-group mt-2">
-													<img id="target1" height="200" width="250" src="<?php echo base_url('assets/images/slider/').$sitesetting[0]->slide2; ?>">
+													<img id="target1" height="200" width="250" src="<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide2; ?>">
 												</div>
 											</div>
 										</div>
@@ -119,7 +119,7 @@
 											<label for="example-search-input" class="col-sm-2 col-form-label"></label>
 											<div class="col-md-10 ">
 												<div class="input-group mt-2">
-													<img id="target2" height="200" width="250" src="<?php echo base_url('assets/images/slider/').$sitesetting[0]->slide3; ?>">
+													<img id="target2" height="200" width="250" src="<?php echo base_url('uploads/images/slider/').$sitesetting[0]->slide3; ?>">
 												</div>
 											</div>
 										</div>

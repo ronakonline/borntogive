@@ -65,7 +65,7 @@ class Sitesetting extends CI_Controller{
 
 	//Upload Image
 	public  function  uploadimage($img,$name,$dest){
-		$config['upload_path'] = 'assets/images/'.$dest;
+		$config['upload_path'] = 'uploads/images/'.$dest;
 		$config['allowed_types'] = 'jpg|jpeg|png|gif';
 		$config['file_name'] = $img['name'];
 
