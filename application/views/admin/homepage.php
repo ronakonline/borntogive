@@ -193,7 +193,7 @@
 											<label for="example-search-input" class="col-sm-2 col-form-label"></label>
 											<div class="col-md-10 ">
 												<div class="input-group mt-2">
-													<img id="target3" height="200" width="250" src="<?php echo base_url('assets/images/placeholder/').$sitesetting[0]->homedivimg; ?>">
+													<img id="target3" height="200" width="250" src="<?php echo base_url('uploads/images/placeholder/').$sitesetting[0]->homedivimg; ?>">
 												</div>
 											</div>
 										</div>

@@ -53,6 +53,41 @@
         <!-- End Hero Slider -->
     </div>
 
+    <div class="padding-tb75 padding-b0">
+                <div class="container">
+                    <div class="text-align-center">
+                        <h2 class="block-title block-title-center">Some of the success stories</h2>
+                    </div>
+                </div>
+                <div class="carousel-wrapper">
+                    <div class="row">
+                        <ul class="owl-carousel carousel-fw" id="stories-slider" data-columns="1" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="1" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                            <li class="item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="<?php echo base_url('uploads/images/placeholder/').$sitesetting[0]->homedivimg; ?>" alt="" class="img-responsive">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="story-slider-content">
+                                            <div class="story-slider-table">
+                                                <div class="story-slider-cell">
+                                                    <blockquote>
+                                                        <h3></h3>
+                                                        <p><?php echo $sitesetting[0]->homedivtext; ?></p>
+                                                    </blockquote>
+                                                    <!-- <a href="#" class="btn btn-primary">View full story</a> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
     <!-- Main Content -->
     <div id="main-container">
     	<div class="content">
